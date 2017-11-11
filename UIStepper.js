@@ -57,7 +57,7 @@ class UIStepper extends Component {
     backgroundColor: 'transparent',
     decrementImage: require('./assets/decrement.png'),
     incrementImage: require('./assets/increment.png'),
-    imageWidth: 20,
+    imageWidth: 15,
     imageHeight: 15,
     width: 94,
     height: 29,
@@ -265,7 +265,7 @@ class UIStepper extends Component {
         >
           <Image
             source={this.resolveImage(decrementImage)}
-            style={this.resolveStyles(decrementImage)}
+            style={[this.resolveStyles(decrementImage), {tintColor : this.state.value <= this.props.minimumValue ? '#F7F7F7' : this.props.tintColor}]}
             resizeMode={'contain'}
           />
         </TouchableOpacity>
@@ -289,7 +289,7 @@ class UIStepper extends Component {
         >
           <Image
             source={this.resolveImage(incrementImage)}
-            style={this.resolveStyles(incrementImage)}
+            style={[this.resolveStyles(incrementImage), {tintColor : this.state.value >= this.props.maximumValue ? '#F7F7F7' : this.props.tintColor}]}
             resizeMode={'contain'}
           />
         </TouchableOpacity>
