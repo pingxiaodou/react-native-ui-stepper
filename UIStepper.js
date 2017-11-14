@@ -265,7 +265,7 @@ class UIStepper extends Component {
         >
           <Image
             source={this.resolveImage(decrementImage)}
-            style={[this.resolveStyles(decrementImage), {tintColor : this.state.value <= this.props.minimumValue ? '#F7F7F7' : this.props.tintColor}]}
+            style={[this.resolveStyles(decrementImage), {tintColor : this.state.value <= this.props.minimumValue ? '#EBEBEB' : this.props.tintColor},this.props.imgStyle ? {...this.props.imgStyle} : {}]}
             resizeMode={'contain'}
           />
         </TouchableOpacity>
@@ -289,7 +289,7 @@ class UIStepper extends Component {
         >
           <Image
             source={this.resolveImage(incrementImage)}
-            style={[this.resolveStyles(incrementImage), {tintColor : this.state.value >= this.props.maximumValue ? '#F7F7F7' : this.props.tintColor}]}
+            style={[this.resolveStyles(incrementImage), {tintColor : this.state.value >= this.props.maximumValue ? '#EBEBEB' : this.props.tintColor},this.props.imgStyle ? {...this.props.imgStyle} : {}]}
             resizeMode={'contain'}
           />
         </TouchableOpacity>
